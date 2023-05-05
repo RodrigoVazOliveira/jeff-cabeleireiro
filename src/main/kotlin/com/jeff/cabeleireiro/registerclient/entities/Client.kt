@@ -1,8 +1,9 @@
 package com.jeff.cabeleireiro.registerclient.entities
 
 data class Client(
-    private var id: String?,
-    private var nameComplete: String?,
-    private var numberTelephone: String?,
-    private var gender: String?
+    val id: Long?,
+    val nameComplete: String?,
+    val email: String?,
+    val numberTelephone: String?,
+    val gender: String?
 )

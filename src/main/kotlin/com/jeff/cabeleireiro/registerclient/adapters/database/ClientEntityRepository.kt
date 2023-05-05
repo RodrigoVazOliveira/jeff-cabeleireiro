@@ -6,4 +6,5 @@ import io.micronaut.data.repository.CrudRepository
 
 @Repository
 interface ClientEntityRepository : CrudRepository<ClientEntity, Long> {
+
 }

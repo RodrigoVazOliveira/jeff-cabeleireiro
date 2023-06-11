@@ -5,36 +5,32 @@ import com.jeff.cabeleireiro.registerclient.adapters.database.ClientEntityToClie
 import com.jeff.cabeleireiro.registerclient.adapters.database.ClientToClientEntityConverter
 import com.jeff.cabeleireiro.registerclient.entities.Client
 import com.jeff.cabeleireiro.registerclient.entities.CreateClientRepository
+import com.jeff.cabeleireiro.shared.commons.Loggable
 import jakarta.inject.Singleton
-import org.slf4j.LoggerFactory
+import net.logstash.logback.argument.StructuredArguments.kv
 
 @Singleton
 class CreateClientGateway(
     private val clientEntityRepository: ClientEntityRepository,
     private val clientToClientEntityConverter: ClientToClientEntityConverter,
     private val clientEntityToClientConvert: ClientEntityToClientConvert
-) : CreateClientRepository {
-    private val logger = LoggerFactory.getLogger(CreateClientGateway::class.java)
-    private val ruleName = "[CreateClient] [Gateway]"
+) : CreateClientRepository, Loggable {
 
     override fun save(client: Client): Client {
-        logger.info("$ruleName [save] creating new client {}", client.toString())
+        LOGGER.info("creating new client {}", kv("client", client))
         runCatching {
             val clientEntity = clientToClientEntityConverter.execute(client)
             clientEntityRepository.save(clientEntity)
             val clientCreated = clientEntityToClientConvert.execute(clientEntity)
-
-            logger.info("$ruleName [save] client created with success {}", clientCreated)
+            LOGGER.info("client created with success {}", kv("clientCreated", clientCreated))
 
             return clientCreated
         }.onFailure { exception ->
-            logger.error(
-                "$ruleName [save] error attempt created client message={}, stack={}",
-                exception.message,
-                exception.stackTraceToString()
+            LOGGER.error(
+                "error attempt created client {}, {}",
+                kv("message", exception.message),
+                kv("stack", exception.stackTraceToString())
             )
         }.getOrThrow()
     }
-
-
 }

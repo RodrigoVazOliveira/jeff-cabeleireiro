@@ -3,16 +3,14 @@ package com.jeff.cabeleireiro.registerclient.usecases
 import com.jeff.cabeleireiro.registerclient.entities.Client
 import com.jeff.cabeleireiro.registerclient.entities.CreateClient
 import com.jeff.cabeleireiro.registerclient.entities.CreateClientRepository
-import java.util.logging.Logger
+import com.jeff.cabeleireiro.shared.commons.Loggable
 
 class CreateClientUseCase(
     private val createClientRepository: CreateClientRepository
-) : CreateClient {
-    private val logger = Logger.getLogger(CreateClientUseCase::class.java.toString())
-    private val ruleName = "[CreateClient] [UseCase]"
+) : CreateClient, Loggable {
 
     override fun execute(client: Client): Client {
-        logger.info("$ruleName [execute] creating client")
+        LOGGER.info("creating client")
         return createClientRepository.save(client)
     }
 }

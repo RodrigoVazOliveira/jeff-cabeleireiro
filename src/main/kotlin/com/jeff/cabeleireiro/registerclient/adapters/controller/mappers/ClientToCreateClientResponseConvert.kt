@@ -6,7 +6,7 @@ import com.jeff.cabeleireiro.shared.commons.Loggable
 import jakarta.inject.Singleton
 
 @Singleton
-class ClientToCreateClientResponseConvert : Loggable {
+open class ClientToCreateClientResponseConvert : Loggable {
     fun execute(client: Client) : CreateClientResponse {
         LOGGER.info("converting client to create client response")
         return CreateClientResponse(

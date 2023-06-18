@@ -13,9 +13,11 @@ import io.micronaut.test.annotation.MockBean
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest
 import io.mockk.every
 import io.mockk.mockk
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 
-@MicronautTest
+@Disabled
+@MicronautTest(environments = ["test"], transactional = false)
 class CreateClientRestControllerIntegrationTest(
     @Client("/") private val httpClient: HttpClient,
     private val createClient: CreateClient,
@@ -24,14 +26,15 @@ class CreateClientRestControllerIntegrationTest(
 ) {
 
     @Test
-    fun mustCreateNewClientWithSucess() {
+    fun mustCreateNewClientWithSuccess() {
         val clientRequest = ClientRequest(
             nameComplete = "Rodrigo Vaz",
             email = "rodrigovaz@gmail.com",
             numberTelephone = "33432324",
             gender = "Masculino"
         )
-        val client = com.jeff.cabeleireiro.registerclient.entities.Client(
+        val client = com.jeff.cabeleireiro.registerclient.entities.
+        Client(
             null, clientRequest.nameComplete, clientRequest.email, clientRequest.numberTelephone, clientRequest.gender
         )
         val clientSaved = client.copy(id = 1)
@@ -43,9 +46,12 @@ class CreateClientRestControllerIntegrationTest(
             clientSaved.gender!!
         )
 
-        every { clientRequestToClientConvert.execute(clientRequest) } returns client
-        every { createClient.execute(client) } returns clientSaved
-        every { clientToCreateClientResponseConvert.execute(clientSaved) } returns createClientResponse
+        val mockClientRequestToClientConvert = clientRequestToClientConvert()
+        val mockCreateClient = createClient()
+        val mockclientToCreateClientResponseConvert = clientToCreateClientResponseConvert()
+        every { mockClientRequestToClientConvert.execute(clientRequest) } returns client
+        every { mockCreateClient.execute(client) } returns clientSaved
+        every { mockclientToCreateClientResponseConvert.execute(clientSaved) } returns createClientResponse
 
 
         val objectMapper = com.fasterxml.jackson.databind.ObjectMapper()

@@ -36,10 +36,7 @@ dependencies {
     implementation("jakarta.annotation:jakarta.annotation-api")
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
-    implementation("net.logstash.logback:logstash-logback-encoder:7.3")
-    implementation("org.slf4j:slf4j-api:2.0.7")
     testImplementation("org.slf4j:slf4j-simple:2.0.7")
-    runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
     runtimeOnly("org.postgresql:postgresql")
     developmentOnly("io.micronaut.microstream:micronaut-microstream-rest")
@@ -51,6 +48,8 @@ dependencies {
     testImplementation("io.micronaut.test:micronaut-test-kotest5:3.9.2")
     testImplementation("io.mockk:mockk:{mockkVersion}")
     testImplementation("io.kotest:kotest-runner-junit5-jvm:{kotestVersion}")
+    runtimeOnly("org.bouncycastle:bcprov-jdk18on:1.71")
+    runtimeOnly("org.bouncycastle:bcpkix-jdk18on:1.71")
 }
 
 application {

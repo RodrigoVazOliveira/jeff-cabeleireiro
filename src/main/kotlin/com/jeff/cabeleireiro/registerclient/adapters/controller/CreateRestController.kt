@@ -10,7 +10,6 @@ import io.micronaut.http.HttpResponse
 import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Post
-import net.logstash.logback.argument.StructuredArguments.kv
 import java.net.URI
 import javax.validation.Valid
 
@@ -23,12 +22,12 @@ open class CreateRestController(
 
     @Post
     override fun createNewClient(@Body @Valid clientRequest: ClientRequest): Any {
-        LOGGER.info("create new client {}", kv("clientRequest", clientRequest))
+        LOGGER.info("create new client clientRequest: {}", clientRequest)
         val client = clientRequestToClientConvert.execute(clientRequest)
         val createdClient = createClient.execute(client)
         val createClientResponse = clientToCreateClientResponseConvert.execute(createdClient)
 
-        LOGGER.info("{}", kv("createClientResponse", createClientResponse))
+        LOGGER.info("createClientResponse: {}", createClientResponse)
         return HttpResponse.created(createClientResponse, URI.create("/clients/" + createdClient.id))
     }
 }

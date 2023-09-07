@@ -1,0 +1,36 @@
+flyway:
+  datasources:
+    default:
+      enabled: 'true'
+datasources:
+  default:
+    password: jeff_cabeleireiro
+    db-type: postgres
+    dialect: POSTGRES
+    url: jdbc:postgresql://localhost:5432/jeff_cabeleireiro
+    username: jeff_cabeleireiro
+    driver-class-name: org.postgresql.Driver
+micronaut:
+  application:
+    name: jeffCabeleireiro
+  server:
+    ssl:
+      port: 8443
+      enabled: true
+      build-self-signed: true
+    http-version: 2.0
+    netty:
+      http2:
+        push-enabled: true
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+    entity-scan:
+      packages: com.jeff.cabeleireiro
+netty:
+  default:
+    allocator:
+      max-order: '3'

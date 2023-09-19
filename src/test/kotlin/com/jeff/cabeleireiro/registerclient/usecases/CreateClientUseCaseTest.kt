@@ -1,6 +1,6 @@
 package com.jeff.cabeleireiro.registerclient.usecases
 
-import com.jeff.cabeleireiro.registerclient.entities.Client
+import com.jeff.cabeleireiro.entities.Client
 import com.jeff.cabeleireiro.registerclient.entities.CreateClientRepository
 import io.mockk.every
 import io.mockk.mockk

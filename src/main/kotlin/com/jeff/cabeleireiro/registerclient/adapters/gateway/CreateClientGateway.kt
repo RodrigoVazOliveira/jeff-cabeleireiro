@@ -1,10 +1,10 @@
 package com.jeff.cabeleireiro.registerclient.adapters.gateway
 
-import com.jeff.cabeleireiro.registerclient.adapters.database.ClientEntityRepository
-import com.jeff.cabeleireiro.registerclient.adapters.database.ClientEntityToClientConvert
-import com.jeff.cabeleireiro.registerclient.adapters.database.ClientToClientEntityConverter
-import com.jeff.cabeleireiro.registerclient.entities.Client
+import com.jeff.cabeleireiro.entities.Client
+import com.jeff.cabeleireiro.registerclient.adapters.mapper.ClientEntityToClientConvert
+import com.jeff.cabeleireiro.registerclient.adapters.mapper.ClientToClientEntityConverter
 import com.jeff.cabeleireiro.registerclient.entities.CreateClientRepository
+import com.jeff.cabeleireiro.shared.ClientEntityRepository
 import com.jeff.cabeleireiro.shared.commons.Loggable
 import jakarta.inject.Singleton
 
@@ -14,7 +14,7 @@ class CreateClientGateway(
     private val clientToClientEntityConverter: ClientToClientEntityConverter,
     private val clientEntityToClientConvert: ClientEntityToClientConvert,
 
-) : CreateClientRepository, Loggable {
+    ) : CreateClientRepository, Loggable {
 
     override fun save(client: Client): Client {
         LOGGER.info("creating new client {}", client)

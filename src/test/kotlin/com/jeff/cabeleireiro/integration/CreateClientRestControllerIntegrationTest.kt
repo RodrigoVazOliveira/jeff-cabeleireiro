@@ -33,8 +33,7 @@ class CreateClientRestControllerIntegrationTest(
             numberTelephone = "33432324",
             gender = "Masculino"
         )
-        val client = com.jeff.cabeleireiro.registerclient.entities.
-        Client(
+        val client = com.jeff.cabeleireiro.entities.Client(
             null, clientRequest.nameComplete, clientRequest.email, clientRequest.numberTelephone, clientRequest.gender
         )
         val clientSaved = client.copy(id = 1)

@@ -1,6 +1,6 @@
-package com.jeff.cabeleireiro.registerclient.adapters.database
+package com.jeff.cabeleireiro.registerclient.adapters.mapper
 
-import com.jeff.cabeleireiro.registerclient.entities.Client
+import com.jeff.cabeleireiro.entities.Client
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import java.util.UUID

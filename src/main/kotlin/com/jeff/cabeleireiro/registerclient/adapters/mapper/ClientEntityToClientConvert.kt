@@ -1,7 +1,7 @@
-package com.jeff.cabeleireiro.registerclient.adapters.database
+package com.jeff.cabeleireiro.registerclient.adapters.mapper
 
-import com.jeff.cabeleireiro.registerclient.entities.Client
-import com.jeff.cabeleireiro.registerclient.infrastructure.ClientEntity
+import com.jeff.cabeleireiro.database.ClientEntity
+import com.jeff.cabeleireiro.entities.Client
 import com.jeff.cabeleireiro.shared.commons.Loggable
 import jakarta.inject.Singleton
 

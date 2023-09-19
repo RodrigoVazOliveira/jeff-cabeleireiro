@@ -1,8 +1,8 @@
-package com.jeff.cabeleireiro.registerclient.adapters.controller
+package com.jeff.cabeleireiro.getallclient.adapters.controller
 
-import com.jeff.cabeleireiro.registerclient.adapters.controller.mappers.ListClientsToListClientResponseConvert
-import com.jeff.cabeleireiro.registerclient.entities.GetAllClient
-import com.jeff.cabeleireiro.registerclient.entities.GetAllClientPortIn
+import com.jeff.cabeleireiro.getallclient.entities.GetAllClient
+import com.jeff.cabeleireiro.getallclient.entities.GetAllClientPortIn
+import com.jeff.cabeleireiro.getallclient.adapters.controller.mappers.ListClientsToListClientResponseConvert
 import com.jeff.cabeleireiro.shared.commons.Loggable
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.annotation.Controller

@@ -4,7 +4,7 @@ import com.jeff.cabeleireiro.registerclient.adapters.controller.mappers.ClientRe
 import com.jeff.cabeleireiro.registerclient.adapters.controller.mappers.ClientToCreateClientResponseConvert
 import com.jeff.cabeleireiro.registerclient.adapters.controller.requests.ClientRequest
 import com.jeff.cabeleireiro.registerclient.adapters.controller.responses.CreateClientResponse
-import com.jeff.cabeleireiro.registerclient.entities.Client
+import com.jeff.cabeleireiro.entities.Client
 import com.jeff.cabeleireiro.registerclient.entities.CreateClient
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.HttpStatus

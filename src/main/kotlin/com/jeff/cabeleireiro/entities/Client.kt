@@ -1,4 +1,4 @@
-package com.jeff.cabeleireiro.registerclient.entities
+package com.jeff.cabeleireiro.entities
 
 data class Client(
     val id: Long?,

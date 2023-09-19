@@ -1,10 +1,10 @@
 package com.jeff.cabeleireiro.registerclient.adapters.gateway
 
-import com.jeff.cabeleireiro.registerclient.adapters.database.ClientEntityRepository
-import com.jeff.cabeleireiro.registerclient.adapters.database.ClientEntityToClientConvert
-import com.jeff.cabeleireiro.registerclient.adapters.database.ClientToClientEntityConverter
-import com.jeff.cabeleireiro.registerclient.entities.Client
-import com.jeff.cabeleireiro.registerclient.infrastructure.ClientEntity
+import com.jeff.cabeleireiro.shared.ClientEntityRepository
+import com.jeff.cabeleireiro.registerclient.adapters.mapper.ClientEntityToClientConvert
+import com.jeff.cabeleireiro.registerclient.adapters.mapper.ClientToClientEntityConverter
+import com.jeff.cabeleireiro.entities.Client
+import com.jeff.cabeleireiro.database.ClientEntity
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify

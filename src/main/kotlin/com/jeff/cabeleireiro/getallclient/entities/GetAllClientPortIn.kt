@@ -1,4 +1,4 @@
-package com.jeff.cabeleireiro.registerclient.entities
+package com.jeff.cabeleireiro.getallclient.entities
 
 interface GetAllClientPortIn {
 

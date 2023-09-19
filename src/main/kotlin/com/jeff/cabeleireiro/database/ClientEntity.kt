@@ -1,4 +1,4 @@
-package com.jeff.cabeleireiro.registerclient.infrastructure
+package com.jeff.cabeleireiro.database
 
 import javax.persistence.Column
 import javax.persistence.Entity

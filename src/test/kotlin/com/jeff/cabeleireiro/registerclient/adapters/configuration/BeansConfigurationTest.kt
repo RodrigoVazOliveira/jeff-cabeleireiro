@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 
 class BeansConfigurationTest {
     private val createClientRepository: CreateClientRepository = mockk()
-    private val beansConfiguration = BeansConfiguration()
+    private val beansConfiguration = RegisterClientBeanConfiguration()
 
     @Test
     fun mustCreateUseCaseCreateClient() {

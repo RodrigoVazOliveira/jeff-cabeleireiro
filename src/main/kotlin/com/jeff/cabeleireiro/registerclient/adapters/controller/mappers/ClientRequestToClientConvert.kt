@@ -1,7 +1,7 @@
 package com.jeff.cabeleireiro.registerclient.adapters.controller.mappers
 
 import com.jeff.cabeleireiro.registerclient.adapters.controller.requests.ClientRequest
-import com.jeff.cabeleireiro.registerclient.entities.Client
+import com.jeff.cabeleireiro.entities.Client
 import com.jeff.cabeleireiro.shared.commons.Loggable
 import jakarta.inject.Singleton
 

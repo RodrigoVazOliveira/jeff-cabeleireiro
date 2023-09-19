@@ -1,9 +1,9 @@
-package com.jeff.cabeleireiro.registerclient.adapters.gateway
+package com.jeff.cabeleireiro.getallclient.adapters.gateway
 
-import com.jeff.cabeleireiro.registerclient.adapters.database.ClientEntitiesToClientsConvert
-import com.jeff.cabeleireiro.registerclient.adapters.database.ClientEntityRepository
-import com.jeff.cabeleireiro.registerclient.entities.Client
-import com.jeff.cabeleireiro.registerclient.entities.GetAllClientRepository
+import com.jeff.cabeleireiro.entities.Client
+import com.jeff.cabeleireiro.getallclient.entities.GetAllClientRepository
+import com.jeff.cabeleireiro.getallclient.adapters.database.ClientEntitiesToClientsConvert
+import com.jeff.cabeleireiro.shared.ClientEntityRepository
 import com.jeff.cabeleireiro.shared.commons.Loggable
 import jakarta.inject.Singleton
 

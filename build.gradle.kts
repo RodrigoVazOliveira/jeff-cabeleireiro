@@ -11,7 +11,7 @@ plugins {
 version = "0.1"
 group = "com.jeff.cabeleireiro"
 
-val kotlinVersion=project.properties.get("kotlinVersion")
+val kotlinVersion = project.properties.get("kotlinVersion")
 repositories {
     mavenCentral()
 }
@@ -36,6 +36,11 @@ dependencies {
     implementation("jakarta.annotation:jakarta.annotation-api")
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
+    implementation("net.logstash.logback:logstash-logback-encoder:7.4")
+    implementation("ch.qos.logback:logback-classic:1.4.11")
+
+
+
     testImplementation("org.slf4j:slf4j-simple:2.0.7")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
     runtimeOnly("org.postgresql:postgresql")

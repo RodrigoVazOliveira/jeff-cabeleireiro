@@ -1,10 +1,10 @@
 package com.jeff.cabeleireiro.registerclient.adapters.gateway
 
-import com.jeff.cabeleireiro.shared.ClientEntityRepository
-import com.jeff.cabeleireiro.registerclient.adapters.mapper.ClientEntityToClientConvert
-import com.jeff.cabeleireiro.registerclient.adapters.mapper.ClientToClientEntityConverter
-import com.jeff.cabeleireiro.entities.Client
 import com.jeff.cabeleireiro.database.ClientEntity
+import com.jeff.cabeleireiro.entities.Client
+import com.jeff.cabeleireiro.registerclient.adapters.mapper.ClientToClientEntityConverter
+import com.jeff.cabeleireiro.shared.ClientEntityRepository
+import com.jeff.cabeleireiro.shared.mapper.ClientEntityToClientConvert
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
@@ -17,25 +17,25 @@ class CreateClientGatewayTest {
     private val clientToClientEntityConverter: ClientToClientEntityConverter = mockk()
     private val clientEntityToClientConvert: ClientEntityToClientConvert = mockk()
     private val createClientGateway = CreateClientGateway(
-        clientEntityRepository, clientToClientEntityConverter, clientEntityToClientConvert
+            clientEntityRepository, clientToClientEntityConverter, clientEntityToClientConvert
     )
 
     @Test
     fun mustSaveNewClientWithSucess() {
         val client = Client(
-            nameComplete = "Rodrigo Vaz",
-            email = "rodrigo@gmail.com",
-            numberTelephone = "3456564765",
-            gender = "Masculino",
-            id = null
+                nameComplete = "Rodrigo Vaz",
+                email = "rodrigo@gmail.com",
+                numberTelephone = "3456564765",
+                gender = "Masculino",
+                id = null
         )
 
         val clientEntity = ClientEntity(
-            id = client.id,
-            nameComplete = client.nameComplete,
-            email = client.email,
-            numberTelephone = client.numberTelephone,
-            gender = client.gender
+                id = client.id,
+                nameComplete = client.nameComplete,
+                email = client.email,
+                numberTelephone = client.numberTelephone,
+                gender = client.gender
         )
         val clientSaved = client.copy(id = 1)
         every { clientToClientEntityConverter.execute(client) } returns clientEntity
@@ -55,19 +55,19 @@ class CreateClientGatewayTest {
     @Test
     fun mustSaveNewClientWithErrorValidation() {
         val client = Client(
-            nameComplete = "Rodrigo Vaz",
-            email = "rodrigo@gmail.com",
-            numberTelephone = "3456564765",
-            gender = "Masculino",
-            id = null
+                nameComplete = "Rodrigo Vaz",
+                email = "rodrigo@gmail.com",
+                numberTelephone = "3456564765",
+                gender = "Masculino",
+                id = null
         )
 
         val clientEntity = ClientEntity(
-            id = client.id,
-            nameComplete = client.nameComplete,
-            email = client.email,
-            numberTelephone = client.numberTelephone,
-            gender = client.gender
+                id = client.id,
+                nameComplete = client.nameComplete,
+                email = client.email,
+                numberTelephone = client.numberTelephone,
+                gender = client.gender
         )
         val clientSaved = client.copy(id = 1)
         every { clientToClientEntityConverter.execute(client) } returns clientEntity
@@ -75,7 +75,7 @@ class CreateClientGatewayTest {
 
 
         val violationException =
-            Assertions.assertThrows(ValidationException::class.java) { createClientGateway.save(client) }
+                Assertions.assertThrows(ValidationException::class.java) { createClientGateway.save(client) }
 
         verify { clientToClientEntityConverter.execute(client) }
         verify { clientEntityRepository.save(clientEntity) }

@@ -1,0 +1,15 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!--<withJansi>true</withJansi>-->
+        <charset>UTF-8</charset>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+        <!--<encoder>
+            <pattern>%cyan(%d{HH:mm:ss.SSS}) %green([%35thread]) %highlight(%-5level) %magenta(%logger.%M) - %msg%n %ex{short}</pattern>
+        </encoder>-->
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

@@ -3,4 +3,4 @@ defaultPackage: com.jeff.cabeleireiro
 testFramework: junit
 sourceLanguage: kotlin
 buildTool: gradle_kotlin
-features: [annotation-api, app-name, data, data-jpa, flyway, gradle, hibernate-jpa, http-client, jackson-databind, jdbc-tomcat, junit, kotlin, kotlin-application, kotlin-build, logback, micronaut-build, micronaut-validation, microstream, microstream-rest, netty-server, postgres, properties, readme, serialization-jackson, shade, test-resources]
+features: [app-name, data, data-jpa, gradle, h2, http-client-test, jackson-databind, jdbc-hikari, junit, kotlin, kotlin-application, ksp, micronaut-aot, micronaut-build, micronaut-http-validation, microstream, netty-server, properties, readme, shade, slf4j-simple, static-resources]

@@ -10,8 +10,8 @@ import io.micronaut.http.HttpResponse
 import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Post
+import jakarta.validation.Valid
 import java.net.URI
-import javax.validation.Valid
 
 @Controller("/clients")
 open class CreateRestController(

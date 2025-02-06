@@ -8,9 +8,9 @@ import com.jeff.cabeleireiro.shared.mapper.ClientEntityToClientConvert
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
+import jakarta.validation.ValidationException
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
-import javax.validation.ValidationException
 
 class CreateClientGatewayTest {
     private val clientEntityRepository: ClientEntityRepository = mockk()

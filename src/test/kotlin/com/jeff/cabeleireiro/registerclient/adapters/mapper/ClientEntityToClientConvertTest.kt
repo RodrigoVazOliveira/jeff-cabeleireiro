@@ -1,6 +1,7 @@
 package com.jeff.cabeleireiro.registerclient.adapters.mapper
 
 import com.jeff.cabeleireiro.database.ClientEntity
+import com.jeff.cabeleireiro.shared.mapper.ClientEntityToClientConvert
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
@@ -9,11 +10,11 @@ class ClientEntityToClientConvertTest {
     @Test
     fun mustConvertEntityToClient() {
         val clientEntity = ClientEntity(
-            id = 1,
-            nameComplete = "Test",
-            email = "test@gmail.com",
-            numberTelephone = "432423",
-            gender = "Masculino"
+                id = 1,
+                nameComplete = "Test",
+                email = "test@gmail.com",
+                numberTelephone = "432423",
+                gender = "Masculino"
         )
         val clientEntityToClientConvert = ClientEntityToClientConvert()
         val client = clientEntityToClientConvert.execute(clientEntity)
